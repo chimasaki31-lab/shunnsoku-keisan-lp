@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>瞬速計算マスター｜算数ドリルと暗算脳トレ</title>
+  <meta name="description" content="1タップで脳が目覚める！制限時間内にスピード計算。ランクS達成を目指す小学生・脳トレ向けアプリ。たしざん・ひきざん・かけざん・わりざん対応。無料ダウンロード。">
+
+  <!-- OGP -->
+  <meta property="og:title" content="瞬速計算マスター｜算数ドリルと暗算脳トレ">
+  <meta property="og:description" content="1タップで脳が目覚める！3分間のスピード計算で、あなたの限界に挑め。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://chimasaki31-lab.github.io/shunnsoku-keisan-lp/">
+  <meta property="og:locale" content="ja_JP">
+
+  <link rel="canonical" href="https://chimasaki31-lab.github.io/shunnsoku-keisan-lp/">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, 'Hiragino Sans', 'Yu Gothic UI', sans-serif;
+      background: #fff;
+      color: #1a1a1a;
+      line-height: 1.7;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(160deg, #0d47a1 0%, #1565c0 50%, #1976d2 100%);
+      padding: 56px 24px 48px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.4);
+      color: #fff;
+      font-size: 13px;
+      font-weight: bold;
+      padding: 5px 18px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      letter-spacing: 0.04em;
+    }
+
+    .hero-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 20px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.3);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 26px;
+      font-weight: 900;
+      line-height: 1.45;
+      color: #fff;
+      margin-bottom: 14px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: #90caf9;
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 32px;
+      font-weight: 500;
+    }
+
+    .dl-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #fff;
+      color: #1565c0;
+      text-decoration: none;
+      padding: 15px 36px;
+      border-radius: 16px;
+      font-size: 17px;
+      font-weight: bold;
+      margin-bottom: 40px;
+      transition: opacity 0.2s;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.22);
+    }
+    .dl-btn:hover { opacity: 0.88; }
+    .dl-btn svg { flex-shrink: 0; }
+
+    .screenshots {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .screenshots img {
+      width: 150px;
+      border-radius: 20px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.28);
+    }
+
+    /* ===== セクション共通 ===== */
+    .section-label {
+      font-size: 12px;
+      color: #888;
+      text-align: center;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: 24px;
+      font-weight: 900;
+      text-align: center;
+      color: #1a1a1a;
+      margin-bottom: 28px;
+      line-height: 1.4;
+    }
+
+    /* ===== ORIGIN STORY ===== */
+    .origin {
+      background: #f5f7fa;
+      padding: 56px 24px;
+      text-align: center;
+    }
+
+    .origin-box {
+      max-width: 460px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 20px;
+      padding: 28px 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+      border-left: 5px solid #1565c0;
+      text-align: left;
+    }
+
+    .origin-box p {
+      font-size: 15px;
+      color: #444;
+      line-height: 1.9;
+    }
+
+    .origin-box .origin-name {
+      display: inline-block;
+      font-size: 13px;
+      color: #1565c0;
+      font-weight: 700;
+      margin-top: 16px;
+    }
+
+    /* ===== TARGET ===== */
+    .target {
+      padding: 56px 24px;
+      background: #fff;
+    }
+
+    .target-list {
+      list-style: none;
+      max-width: 460px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .target-list li {
+      padding: 14px 18px;
+      background: #e3f2fd;
+      border-left: 4px solid #1565c0;
+      border-radius: 10px;
+      font-size: 15px;
+      color: #0d47a1;
+      font-weight: 600;
+    }
+
+    /* ===== FEATURES ===== */
+    .features {
+      padding: 56px 24px;
+      background: #f5f7fa;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .feature-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 24px 22px;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+    }
+
+    .feature-icon {
+      font-size: 34px;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .feature-card h3 {
+      font-size: 17px;
+      font-weight: bold;
+      color: #0d47a1;
+      margin-bottom: 6px;
+    }
+
+    .feature-card p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    /* ===== RANK ===== */
+    .rank-section {
+      background: linear-gradient(135deg, #1a1a2e 0%, #0d2137 60%, #0d47a1 100%);
+      color: #fff;
+      padding: 56px 24px;
+      text-align: center;
+    }
+
+    .rank-label {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,0.4);
+      color: rgba(255,255,255,0.85);
+      font-size: 12px;
+      padding: 4px 16px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+      letter-spacing: 0.08em;
+    }
+
+    .rank-title {
+      font-size: 24px;
+      font-weight: 900;
+      line-height: 1.4;
+      margin-bottom: 16px;
+      color: #ffd700;
+      text-shadow: 0 2px 12px rgba(255,215,0,0.35);
+    }
+
+    .rank-desc {
+      font-size: 15px;
+      color: rgba(255,255,255,0.82);
+      max-width: 440px;
+      margin: 0 auto 28px;
+      line-height: 1.85;
+    }
+
+    .rank-table {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 440px;
+      margin: 0 auto;
+    }
+
+    .rank-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px;
+      padding: 12px 18px;
+    }
+
+    .rank-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    .rank-s { background: linear-gradient(135deg, #ffd700, #ff8c00); color: #fff; box-shadow: 0 2px 10px rgba(255,215,0,0.5); }
+    .rank-a { background: #2e7d32; color: #fff; }
+    .rank-b { background: #1565c0; color: #fff; }
+    .rank-c { background: #555; color: #fff; }
+
+    .rank-cond {
+      text-align: left;
+      font-size: 14px;
+      color: rgba(255,255,255,0.82);
+      line-height: 1.5;
+    }
+
+    /* ===== HOW TO ===== */
+    .howto {
+      padding: 56px 24px;
+      background: #fff;
+    }
+
+    .steps {
+      max-width: 460px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .step {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      width: 42px;
+      height: 42px;
+      min-width: 42px;
+      background: linear-gradient(135deg, #42a5f5, #1565c0);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      font-weight: 900;
+      color: #fff;
+    }
+
+    .step-content h3 {
+      font-size: 17px;
+      font-weight: bold;
+      color: #0d47a1;
+      margin-bottom: 4px;
+    }
+
+    .step-content p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    /* ===== PREMIUM ===== */
+    .premium {
+      padding: 56px 24px;
+      background: #f5f7fa;
+      text-align: center;
+    }
+
+    .premium-box {
+      max-width: 440px;
+      margin: 0 auto;
+      background: #fff;
+      border-radius: 20px;
+      padding: 28px 24px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    .premium-price {
+      font-size: 32px;
+      font-weight: 900;
+      color: #1565c0;
+      margin: 12px 0;
+    }
+
+    .premium-price span {
+      font-size: 16px;
+      font-weight: 600;
+      color: #666;
+    }
+
+    .premium-desc {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.7;
+      margin-top: 12px;
+    }
+
+    /* ===== CTA ===== */
+    .cta {
+      padding: 64px 24px;
+      background: linear-gradient(160deg, #e3f2fd 0%, #bbdefb 100%);
+      text-align: center;
+    }
+
+    .cta h2 {
+      font-size: 26px;
+      font-weight: 900;
+      color: #0d47a1;
+      margin-bottom: 12px;
+      line-height: 1.4;
+    }
+
+    .cta p {
+      font-size: 15px;
+      color: #1565c0;
+      margin-bottom: 32px;
+    }
+
+    .cta .dl-btn {
+      color: #1565c0;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #1a1a1a;
+      color: #888;
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    footer a {
+      color: #64b5f6;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover { text-decoration: underline; }
+
+    /* ===== RESPONSIVE ===== */
+    @media (min-width: 560px) {
+      .hero h1 { font-size: 32px; }
+      .screenshots img { width: 180px; }
+      .features-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- パンくず -->
+<nav style="padding: 12px 24px; font-size: 13px; color: #888; border-bottom: 1px solid #f0f0f0;">
+  <a href="https://chimasaki31-lab.github.io/" style="color: #1565c0;">MC Labs</a> &rsaquo; 瞬速計算マスター
+</nav>
+
+<!-- ヒーロー -->
+<section class="hero">
+  <div class="hero-badge">⚡ 小学生・脳トレ向け 計算スピードドリル</div>
+  <img src="app_icon.png" alt="瞬速計算マスター アイコン" class="hero-icon">
+  <h1>
+    1タップで脳が目覚める！<br>
+    3分間のスピード計算で、<br>
+    <em>あなたの限界に挑め。</em>
+  </h1>
+  <p class="hero-sub">制限時間内に次々と計算問題を解く、エデュテインメントアプリ</p>
+  <a href="https://apps.apple.com/jp/app/%E7%9E%AC%E9%80%9F%E8%A8%88%E7%AE%97%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC-%E7%AE%97%E6%95%B0%E3%83%89%E3%83%AA%E3%83%AB%E3%81%A8%E6%9A%97%E7%AE%97%E8%84%B3%E3%83%88%E3%83%AC/id6765611618" class="dl-btn" target="_blank" rel="noopener">
+    <svg viewBox="0 0 814 1000" width="22" height="22" fill="#1565c0"><path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-57.8-155.5-127.4C46 790.7 0 663 0 541.8c0-207.3 134.4-316.7 266.8-316.7 99.8 0 162.6 64.8 212.7 64.8 46.2 0 121.2-68.8 228.5-68.8zm-88-174c43.8-51.7 74.6-123.5 74.6-195.3 0-10.3-.6-20.7-2.6-29.2-70.7 2.6-154.7 47.1-204.7 107.2-38.4 44.4-75.9 116.2-75.9 189 0 11.6 1.9 23.2 2.6 26.9 4.5.6 11.6 1.9 18.7 1.9 63.5 0 143.9-42.5 187.3-100.5z"/></svg>
+    App Storeで無料ダウンロード
+  </a>
+  <div class="screenshots">
+    <img src="screenshot1.png" alt="スピード計算 問題画面">
+    <img src="screenshot2.png" alt="ランクS達成 結果画面">
+    <img src="screenshot3.png" alt="メニュー 演算モード選択">
+  </div>
+</section>
+
+<!-- 開発の背景 -->
+<section class="origin">
+  <p class="section-label">WHY WE MADE THIS</p>
+  <h2 class="section-title">このアプリを作った理由</h2>
+  <div class="origin-box">
+    <p>
+      「爆速計算ドリルは難しすぎる」──そんな声をきっかけに作りました。<br><br>
+      小学2年生には、2けたの計算よりも、まず<strong>1けたの四則演算をしっかり速く解く力</strong>が必要です。<br><br>
+      このアプリは難易度を抑えながら、ゲーム感覚でスピードと正確さの両方を鍛えられるように設計しました。子どもからシニアまで、楽しみながら続けられます。
+    </p>
+    <span class="origin-name">— 開発者 MC</span>
+  </div>
+</section>
+
+<!-- こんな人に -->
+<section class="target">
+  <p class="section-label">FOR YOU</p>
+  <h2 class="section-title">こんな方に使ってほしい</h2>
+  <ul class="target-list">
+    <li>⭐ 計算力をゲーム感覚で鍛えたい小学生</li>
+    <li>🧠 毎日の脳トレを習慣にしたいシニアの方</li>
+    <li>⚡ 隙間時間にサクッと頭を動かしたい方</li>
+    <li>📚 爆速計算ドリルの前のステップを探している方</li>
+  </ul>
+</section>
+
+<!-- 機能紹介 -->
+<section class="features">
+  <p class="section-label">FEATURES</p>
+  <h2 class="section-title">3つの主な機能</h2>
+  <div class="features-grid">
+    <div class="feature-card">
+      <span class="feature-icon">⚡</span>
+      <h3>スピード計算クイズ</h3>
+      <p>制限時間内に次々と出題される計算問題を解く。テンポよく答えることで、自然と計算スピードが上がります。</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">➕➖✖️➗</span>
+      <h3>四則演算の基礎出題</h3>
+      <p>「1桁の足し算」「答えが1桁の引き算」「1桁×1桁の掛け算」「答えが1桁の割り算」の4種から選んで挑戦。</p>
+    </div>
+    <div class="feature-card">
+      <span class="feature-icon">🏆</span>
+      <h3>ランク判定システム</h3>
+      <p>解答タイムと正解率でS・A・B・Cを判定。自己ベストが自動保存され、昨日の自分を超える達成感があります。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ランク説明 -->
+<section class="rank-section">
+  <div class="rank-label">目標はひとつ</div>
+  <h2 class="rank-title">🏆 ランクS を目指せ</h2>
+  <p class="rank-desc">
+    100問を全問正解、3分以内でクリアするとランクS達成。<br>
+    記録は自動保存。毎回自分の壁を越えることが目標になる。
+  </p>
+  <div class="rank-table">
+    <div class="rank-row">
+      <div class="rank-badge rank-s">S</div>
+      <div class="rank-cond">100問 全問正解 ＋ 3分以内<br><span style="font-size:12px;color:rgba(255,255,255,0.55);">計算マスターの証</span></div>
+    </div>
+    <div class="rank-row">
+      <div class="rank-badge rank-a">A</div>
+      <div class="rank-cond">正解率90%以上 ＋ 4分以内</div>
+    </div>
+    <div class="rank-row">
+      <div class="rank-badge rank-b">B</div>
+      <div class="rank-cond">正解率80%以上 ＋ 5分以内</div>
+    </div>
+    <div class="rank-row">
+      <div class="rank-badge rank-c">C</div>
+      <div class="rank-cond">上記以外（練習あるのみ！）</div>
+    </div>
+  </div>
+</section>
+
+<!-- 使い方 -->
+<section class="howto">
+  <p class="section-label">HOW TO USE</p>
+  <h2 class="section-title">使い方は3ステップ</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <h3>演算モードと問題数を選ぶ</h3>
+        <p>たしざん・ひきざん・かけざん・わりざんから1つ選び、10問か100問かを決めます。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <h3>テンポよく答えていく</h3>
+        <p>大きなキーパッドで次々と解答。正解すると自動で次へ進むので、集中が途切れません。</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <h3>ランクと自己ベストを確認</h3>
+        <p>終了後にランクとタイムを確認。100問モードはベストタイムが自動保存されます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- プレミアム（広告非表示） -->
+<section class="premium">
+  <p class="section-label">PREMIUM</p>
+  <h2 class="section-title">広告なしで集中できる</h2>
+  <div class="premium-box">
+    <p style="font-size:15px;color:#555;">基本機能はすべて無料。<br>より集中して取り組みたい方に。</p>
+    <div class="premium-price">¥400 <span>（買い切り）</span></div>
+    <div class="premium-desc">
+      広告を完全に非表示にします。問題の途中で広告が入らず、スピードを途切れさせずに最後まで集中できます。
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>さあ、計算を<br>速くしよう！</h2>
+  <p>無料で今すぐ始められます。まずは10問から試してみてください。</p>
+  <a href="https://apps.apple.com/jp/app/%E7%9E%AC%E9%80%9F%E8%A8%88%E7%AE%97%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%BC-%E7%AE%97%E6%95%B0%E3%83%89%E3%83%AA%E3%83%AB%E3%81%A8%E6%9A%97%E7%AE%97%E8%84%B3%E3%83%88%E3%83%AC/id6765611618" class="dl-btn" target="_blank" rel="noopener">
+    <svg viewBox="0 0 814 1000" width="22" height="22" fill="#1565c0"><path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-57.8-155.5-127.4C46 790.7 0 663 0 541.8c0-207.3 134.4-316.7 266.8-316.7 99.8 0 162.6 64.8 212.7 64.8 46.2 0 121.2-68.8 228.5-68.8zm-88-174c43.8-51.7 74.6-123.5 74.6-195.3 0-10.3-.6-20.7-2.6-29.2-70.7 2.6-154.7 47.1-204.7 107.2-38.4 44.4-75.9 116.2-75.9 189 0 11.6 1.9 23.2 2.6 26.9 4.5.6 11.6 1.9 18.7 1.9 63.5 0 143.9-42.5 187.3-100.5z"/></svg>
+    App Storeで無料ダウンロード
+  </a>
+</section>
+
+<!-- フッター -->
+<footer>
+  <p>瞬速計算マスター - 算数ドリルと暗算脳トレ</p>
+  <p style="margin-top: 12px;">
+    <a href="https://chimasaki31-lab.github.io/">MC Labs トップへ</a>
+    <a href="https://chimasaki31-lab.github.io/ketsuatsu-ai/">血圧手帳AI</a>
+    <a href="https://chimasaki31-lab.github.io/bakusoku-vocab-lp/">爆速英単語</a>
+    <a href="https://chimasaki31-lab.github.io/bakusoku-keisan-drill-lp/">爆速計算ドリル</a>
+    <a href="https://sites.google.com/view/sonic-math/%E3%83%9B%E3%83%BC%E3%83%A0" target="_blank" rel="noopener">プライバシーポリシー</a>
+    <a href="mailto:chimasaki31@gmail.com">お問い合わせ</a>
+  </p>
+  <p style="margin-top: 12px;">© 2026 MC Labs. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
