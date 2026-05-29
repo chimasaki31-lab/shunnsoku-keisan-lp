@@ -98,13 +98,21 @@
     .screenshots {
       display: flex;
       gap: 14px;
-      justify-content: center;
-      flex-wrap: wrap;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x mandatory;
+      padding: 0 24px 12px;
+      scrollbar-width: none;
+    }
+    .screenshots::-webkit-scrollbar {
+      display: none;
     }
     .screenshots img {
       width: 150px;
+      flex-shrink: 0;
       border-radius: 20px;
       box-shadow: 0 6px 24px rgba(0,0,0,0.28);
+      scroll-snap-align: start;
     }
 
     /* ===== セクション共通 ===== */
