@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>暗算テクニック集を解説｜補数・分配・きりのいい数で速く計算するコツ</title>
+  <meta name="description" content="暗算が速くなるテクニックをまとめて解説。補数を使った引き算、分配で楽にするかけ算、きりのいい数に寄せる足し算、5や25のかけ算の裏ワザまで、具体例つきでやさしく紹介します。大人の脳トレにも。">
+
+  <meta property="og:title" content="暗算テクニック集｜補数・分配・きりのいい数のコツ">
+  <meta property="og:description" content="補数・分配・きりのいい数・5や25のかけ算の裏ワザまで、暗算が速くなるテクニックを具体例つきで解説。">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://chimasaki31-lab.github.io/shunnsoku-keisan-lp/anzan-tekunikku/">
+  <meta property="og:locale" content="ja_JP">
+
+  <link rel="canonical" href="https://chimasaki31-lab.github.io/shunnsoku-keisan-lp/anzan-tekunikku/">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "暗算テクニック集を解説｜補数・分配・きりのいい数で速く計算するコツ",
+    "description": "暗算が速くなるテクニックをまとめて解説。補数・分配・きりのいい数・5や25のかけ算の裏ワザを具体例つきで紹介します。",
+    "inLanguage": "ja",
+    "author": { "@type": "Organization", "name": "MC Labs" },
+    "publisher": { "@type": "Organization", "name": "MC Labs" },
+    "mainEntityOfPage": "https://chimasaki31-lab.github.io/shunnsoku-keisan-lp/anzan-tekunikku/"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "×5 を速く計算するコツはありますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "『×10して半分にする』と速くなります。たとえば 86×5 は、860の半分で430です。×5は10の半分なので、この方法が使えます。" }
+      },
+      {
+        "@type": "Question",
+        "name": "分配のテクニックとは何ですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "かけ算を足し算・引き算に分けて計算する方法です。たとえば 23×12 は、23×10＝230 と 23×2＝46 に分けて、足して276と求めます。きりのいい数に寄せて分けるのがコツです。" }
+      },
+      {
+        "@type": "Question",
+        "name": "テクニックを覚えれば誰でも速くなりますか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "テクニックは入り口で、使いこなすには練習が必要です。知識として知るだけでなく、実際に手を動かしてくり返すことで、考えずに使えるようになります。" }
+      },
+      {
+        "@type": "Question",
+        "name": "どのテクニックから覚えればよいですか？",
+        "acceptedAnswer": { "@type": "Answer", "text": "まずは『左から計算する』『きりのいい数に寄せる』の2つがおすすめです。応用が広く、ふだんの計算ですぐ役立ちます。慣れたら補数や分配を足していきましょう。" }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', sans-serif; font-size: 17px; color: #1a1a1a; background: #fff; line-height: 1.8; }
+    a { color: inherit; text-decoration: none; }
+
+    .breadcrumb { padding: 12px 20px; font-size: 13px; color: #888; border-bottom: 1px solid #f0f0f0; }
+    .breadcrumb a { color: #1565c0; }
+    .breadcrumb a:hover { opacity: 0.7; }
+
+    .hero { background: linear-gradient(160deg, #0d47a1 0%, #1565c0 55%, #1976d2 100%); color: #fff; padding: 48px 20px 40px; text-align: center; }
+    .hero-badge { display: inline-block; background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.45); border-radius: 20px; padding: 4px 14px; font-size: 13px; margin-bottom: 18px; letter-spacing: 0.05em; }
+    .hero h1 { font-size: 25px; font-weight: 800; line-height: 1.45; letter-spacing: -0.01em; max-width: 720px; margin: 0 auto; }
+
+    article { max-width: 760px; margin: 0 auto; padding: 32px 20px 16px; }
+    .lead { background: #e8f1fc; border-left: 4px solid #1565c0; padding: 16px 18px; border-radius: 0 8px 8px 0; font-size: 16px; color: #333; margin-bottom: 32px; }
+    article h2 { font-size: 21px; font-weight: 800; margin: 40px 0 16px; padding-bottom: 8px; border-bottom: 2px solid #1565c0; color: #0d47a1; }
+    article h3 { font-size: 18px; font-weight: 700; margin: 28px 0 12px; color: #1565c0; }
+    article p { margin-bottom: 16px; }
+    article ul, article ol { margin: 0 0 16px 1.4em; }
+    article li { margin-bottom: 6px; }
+
+    .note { background: #fff8e6; border-left: 4px solid #e0a800; padding: 12px 16px; border-radius: 0 8px 8px 0; font-size: 15px; margin: 16px 0; }
+    .formula { background: #0d2137; color: #cfe2fb; padding: 14px 18px; border-radius: 8px; font-family: 'SF Mono', Menlo, Consolas, monospace; font-size: 15px; margin: 16px 0; overflow-x: auto; line-height: 1.7; }
+
+    .cta { background: linear-gradient(160deg, #0d47a1 0%, #1565c0 100%); color: #fff; border-radius: 16px; padding: 28px 24px; margin: 40px 0; text-align: center; }
+    .cta h2 { border: none; color: #fff; margin: 0 0 12px; font-size: 20px; }
+    .cta ul { text-align: left; max-width: 440px; margin: 0 auto 22px; list-style: none; }
+    .cta li { margin-bottom: 8px; }
+    .cta-btn { display: inline-block; background: #fff; color: #0d47a1; font-weight: 800; padding: 14px 32px; border-radius: 30px; font-size: 16px; transition: transform 0.15s, box-shadow 0.15s; }
+    .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+    .cta-note { font-size: 13px; opacity: 0.85; margin-top: 14px; margin-bottom: 0; }
+
+    .faq-item { border-bottom: 1px solid #eee; padding: 16px 0; }
+    .faq-q { font-weight: 700; color: #0d47a1; margin-bottom: 6px; }
+
+    footer { background: #f7f7f7; padding: 28px 20px; text-align: center; font-size: 13px; color: #888; margin-top: 40px; }
+    .footer-links { margin-bottom: 12px; }
+    .footer-links a { color: #1565c0; margin: 0 8px; }
+    .footer-links a:hover { opacity: 0.7; }
+    .disclaimer { font-size: 12px; color: #aaa; max-width: 620px; margin: 0 auto 12px; line-height: 1.6; }
+
+    @media (max-width: 600px) { body { font-size: 16px; } .hero h1 { font-size: 21px; } article h2 { font-size: 19px; } }
+  </style>
+</head>
+<body>
+
+  <nav class="breadcrumb">
+    <a href="https://chimasaki31-lab.github.io/">MC Labs</a> &rsaquo; <a href="../">瞬速計算マスター</a> &rsaquo; 暗算テクニック集
+  </nav>
+
+  <header class="hero">
+    <span class="hero-badge">計算がわかるガイド</span>
+    <h1>暗算テクニック集<br>―― 補数・分配・きりのいい数</h1>
+  </header>
+
+  <article>
+    <p class="lead">
+      暗算は、ちょっとした<strong>考え方のコツ</strong>を知るだけで、ぐっと速くなります。
+      このページでは、足し算・引き算・かけ算で使える代表的なテクニックを、具体例つきでまとめました。
+      知ったら、実際に手を動かしてくり返すのが身につける近道です。
+    </p>
+
+    <h2>この記事でわかること</h2>
+    <ul>
+      <li>きりのいい数に寄せるコツ</li>
+      <li>補数を使った引き算</li>
+      <li>分配で楽にするかけ算</li>
+      <li>×5・×25 などの裏ワザ</li>
+    </ul>
+
+    <h2>1. きりのいい数に寄せる</h2>
+    <p>計算しやすい数に近づけてから、あとで調整します。足し算で特に便利です。</p>
+    <div class="formula">98 + 57 → 100 + 57 = 157 → 157 − 2 = 155</div>
+
+    <h2>2. 補数で引き算を速く</h2>
+    <p>10・100・1000との差（補数）を使うと、引き算が一瞬です。</p>
+    <div class="formula">1000 − 678 → 678 を 1000 にするには 322 → 答え 322</div>
+
+    <h2>3. 分配でかけ算を分ける</h2>
+    <p>かけ算を足し算に分けて計算します。</p>
+    <div class="formula">23 × 12 → 23×10=230 と 23×2=46 → 230 + 46 = 276</div>
+    <p>きりのいい数（×10）に寄せて分けるのがコツです。</p>
+
+    <h2>4. ×5・×25 の裏ワザ</h2>
+    <ul>
+      <li><strong>×5：</strong>「×10して半分」。86×5 → 860の半分 → 430</li>
+      <li><strong>×25：</strong>「×100して4で割る」。32×25 → 3200÷4 → 800</li>
+    </ul>
+    <div class="note"><strong>覚え方：</strong>5は「10の半分」、25は「100の4分の1」。きりのいい数との関係を使うと速くなります。</div>
+
+    <h2>5. テクニックは「練習」で身につく</h2>
+    <p>テクニックは入り口です。知っているだけでは速くなりません。<strong>実際にくり返して使う</strong>ことで、考えずに出てくるようになります。鍛え方は <a href="../keisanryoku-training/">計算力を鍛えるトレーニング</a> を参考にしてください。</p>
+
+    <div class="cta">
+      <h2>テクニックを「使える」レベルにしたい人へ</h2>
+      <p>覚えたテクニックは、くり返し使ってこそ身につきます。<strong>瞬速計算マスター</strong> なら、たくさんの問題をテンポよく解いて、暗算を体にしみこませられます。</p>
+      <ul>
+        <li>⚡ テンポよく問題を解いてテクニックを定着</li>
+        <li>⏱ タイムを計ってスピードアップ</li>
+        <li>🧠 大人の脳トレにもぴったり</li>
+        <li>📴 無料で今すぐ始められる</li>
+      </ul>
+      <a class="cta-btn" href="https://apps.apple.com/jp/app/id6765611618">App Storeでダウンロード</a>
+      <p class="cta-note">iPhone対応 · 無料で始められます</p>
+    </div>
+
+    <h2>よくある質問（FAQ）</h2>
+    <div class="faq-item">
+      <p class="faq-q">Q. ×5 を速く計算するコツはありますか？</p>
+      <p>A. 「×10して半分にする」と速くなります。86×5 は、860の半分で430です。×5は10の半分なので、この方法が使えます。</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Q. 分配のテクニックとは何ですか？</p>
+      <p>A. かけ算を分けて計算する方法です。23×12 は、23×10＝230 と 23×2＝46 に分けて、足して276と求めます。</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Q. テクニックを覚えれば誰でも速くなりますか？</p>
+      <p>A. テクニックは入り口で、使いこなすには練習が必要です。実際に手を動かしてくり返すことで、考えずに使えるようになります。</p>
+    </div>
+    <div class="faq-item">
+      <p class="faq-q">Q. どのテクニックから覚えればよいですか？</p>
+      <p>A. まずは「左から計算する」「きりのいい数に寄せる」の2つがおすすめです。応用が広く、すぐ役立ちます。</p>
+    </div>
+  </article>
+
+  <footer>
+    <div class="footer-links">
+      <a href="../">瞬速計算マスター</a>
+      <a href="../keisanryoku-training/">計算力を鍛える</a>
+      <a href="../keisan-noutore/">大人の計算脳トレ</a>
+      <a href="https://chimasaki31-lab.github.io/">MC Labs トップへ</a>
+    </div>
+    <p class="disclaimer">
+      ※ 本記事は暗算テクニックに関する一般的な情報を提供するものです。効果には個人差があります。
+    </p>
+    <p>© 2026 MC Labs. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
